@@ -1,9 +1,9 @@
-%This matlab script uses a linear regretion to predict total fatigue 
+%This matlab script uses a linear regretion to predict total fatigue
 %score and to predict differnet types of fatigue.
 
 dataFile = xlsread('..\fatigue\Data\postTest');
-general = dataFile(:,37);  
-physical=dataFile(:,38); 
+general = dataFile(:,37);
+physical=dataFile(:,38);
 mental=dataFile(:,39);
 activity=dataFile(:,40);
 motivation=dataFile(:,41);

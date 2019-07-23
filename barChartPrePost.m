@@ -1,0 +1,15 @@
+preData = xlsread('..\fatigue\Data\preTest');
+postData = xlsread('..\fatigue\Data\postTest');
+prePhysical=preData(:,39);
+postPhysical=postData(:,38);
+fig1=figure(1);
+b=bar([mean(prePhysical),mean(postPhysical)],'y');
+%b(1).FaceColor = [.7 .7 .8];
+%b(2).FaceColor = [1 .6 .5];
+%fig2=figure(2);
+%bar(postSpeed);
+%fname = '..\Results\barGraph';
+%saveas(fig1, fullfile(fname,'preSpeed'), 'jpeg');
+%hold off;
+%saveas(fig2, fullfile(fname, 'postSpeed'), 'jpeg');
+%hold off;

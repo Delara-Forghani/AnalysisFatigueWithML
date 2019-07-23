@@ -1,7 +1,8 @@
 
 dataFile = xlsread('..\fatigue\Data\postTest');
-X=(dataFile(:,37:41));
-y=dataFile(:,42); %total ICA
+preData = xlsread('..\fatigue\Data\preTest');
+X=(preData(:,38:42));
+y=preData(:,44); %total pre ICA
 
 rand = randperm(50);
 for i=1:5
@@ -16,8 +17,11 @@ for i=1:5
     tempy(rand((i*10)-9:i*10),:)=[];
     yTrain=tempy;
     
-    [finalTheta, mean,std]=crossValidate(xTrain,yTrain);
-    Test(xTest,yTest,finalTheta,mean,std);
- 
+    [finalTheta, mean,std]=crossValidate(xTrain,yTrain,i);
+    finalTheta2=Test(xTest,yTest,finalTheta,mean,std,i);
+    
+    
 end
+
+testOnPost(dataFile,finalTheta2);
 
